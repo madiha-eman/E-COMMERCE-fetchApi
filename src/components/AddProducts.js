@@ -51,7 +51,7 @@ const AddProducts = () => {
             <br />
             <h2>Add Products</h2>
             <hr />
-            <form autoComplete ='off' className='form-group'>
+            <form autoComplete ='off' className='form-group' onSubmit={addProduct}>
             <label htmlFor='product-name'>Product Name</label>
             <br />
             <input type='text' className='form-control' required
