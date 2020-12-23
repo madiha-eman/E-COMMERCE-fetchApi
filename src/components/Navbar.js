@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../images/logo.png'
 import { Link } from 'react-router-dom'
 import { auth } from '../config/Config'
-//import { Icon } from 'react-icons-kit'
-//import { useHistory } from 'react-router-dom'
+import { Icon } from 'react-icons-kit'
+import { cart } from 'react-icons-kit/entypo/cart'
+import { useHistory } from 'react-router-dom'
+import { CartContext } from '../global/CartContext'
 
 export const Navbar = ({ user }) => {
 
-    // const history = useHistory();
+    const { totalQty } = useContext(CartContext);
 
-    // // handle logout
-    // const handleLogout = () => {
-    //     auth.signOut().then(() => {
-    //         history.push('/login');
-    //     })
-    // }
+    const history = useHistory();
+
+    // handle logout
+    const handleLogout = () => {
+        auth.signOut().then(() => {
+            history.push('/login');
+        })
+    }
 
     return (
         <div className='navbox'>
@@ -25,10 +29,12 @@ export const Navbar = ({ user }) => {
                 <span><Link to="signup" className='navlink'>SIGN UP</Link></span>
                 <span><Link to="login" className='navlink'>LOGIN</Link></span>
             </div>}
-            {/* {user && <div className='rightside'>
-                <span><Link to="/" className='navlink'>{user}</Link></span>
+            {user && <div className='rightside'>
+            <span><Link to="/" className='navlink'>{user}</Link></span>
+                <span><Link to="cartproducts" className='navlink'><Icon icon={cart} /></Link></span>
+                <div className='relative' ><span className='no-of-products'>{totalQty}</span></div>
                 <span><button className='logout-btn' onClick={handleLogout}>Logout</button></span>
-            </div>} */}
+            </div>}
         </div>
     )
 }
