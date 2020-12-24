@@ -6,6 +6,8 @@ import { Icon } from 'react-icons-kit'
 import { cart } from 'react-icons-kit/entypo/cart'
 import { useHistory } from 'react-router-dom'
 import { CartContext } from '../global/CartContext'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
 export const Navbar = ({ user }) => {
 
@@ -21,9 +23,15 @@ export const Navbar = ({ user }) => {
     }
 
     return (
+        <AppBar position="static">
+             <Toolbar  className='rightside'>
         <div className='navbox'>
+               
             <div className='leftside'>
                 <img src={logo} alt="" />
+            </div>
+            <div>
+                <Link to='/' className='navlink home'>Home</Link>
             </div>
             {!user && <div className='rightside'>
                 <span><Link to="signup" className='navlink'>SIGN UP</Link></span>
@@ -35,7 +43,12 @@ export const Navbar = ({ user }) => {
                 <div className='relative' ><span className='no-of-products'>{totalQty}</span></div>
                 <span><button className='logout-btn' onClick={handleLogout}>Logout</button></span>
             </div>}
+            
+         
+          
         </div>
+        </Toolbar>
+        </AppBar>
     )
 }
 

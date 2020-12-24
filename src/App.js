@@ -12,29 +12,31 @@ import { Cashout } from './components/Cashout'
 import { NotFound } from './components/Notfound'
 
 export class App extends Component{
-  state = {
-    user: null,
-}
+    state = {
+        user: null,
+    }
+    componentDidMount() {
 
-componentDidMount() {
-
-    // getting user info for navigation bar
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
-                this.setState({
-                    user: snapshot.data().Name
+        // getting user info for navigation bar
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
+                    this.setState({
+                        user: snapshot.data().Name
+                    })
                 })
-            })
-        }
-        else {
-            this.setState({
-                user: null
-            })
-        }
-    })
-
-}
+            }
+            else {
+                this.setState({
+                    user: null
+                })
+            }
+        })
+    
+    }
+    
+    
+    
 render(){
   return (
     <ProductsContextProvider>
