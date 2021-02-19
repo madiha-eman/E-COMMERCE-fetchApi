@@ -23,7 +23,7 @@ export const Navbar = ({ user }) => {
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
              <Toolbar  className='rightside'>
         <div className='navbox'>
                

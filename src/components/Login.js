@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { auth } from '../config/Config'
 import { Link } from 'react-router-dom'
+import '../css/Home.css'
+
 
 const Login = (props) => {
 
@@ -20,10 +22,13 @@ const Login = (props) => {
 
     return (
         <div className='container'>
+            <div className='container-login'>
+                <div className='wrap-login'>
         <br />
-        <h2>Login</h2>
+        
         <br />
-        <form autoComplete="off" className='form-group' onSubmit={login}>
+        <form autoComplete="off" className='login-form' onSubmit={login}>
+        <h2 className='.login-form-title '>Login</h2>
             <label htmlFor="email">Email</label>
             <input type="email" className='form-control' required
                 onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -39,6 +44,8 @@ const Login = (props) => {
         <span>Don't have an account? Register
             <Link to="signup"> Here</Link>
         </span>
+        </div>
+        </div>
     </div>
     )
 }

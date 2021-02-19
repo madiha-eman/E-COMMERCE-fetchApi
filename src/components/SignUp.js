@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { auth, db } from '../config/Config'
 import { Link } from 'react-router-dom'
+import '../css/Home.css'
 
 
    
