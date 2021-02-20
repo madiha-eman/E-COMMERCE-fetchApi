@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
-import { auth } from '../config/Config'
+import React from 'react'
 import '../css/Home.css'
 import Navbar from './Navbar'
 import Products from './Products'

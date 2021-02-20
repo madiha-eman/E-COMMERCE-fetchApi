@@ -3,8 +3,8 @@ import Home from "./components/Home";
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import AddProducts from "./components/AddProducts";
 import { ProductsContextProvider } from "./global/ProductContext";
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
+import SignUp from "./components/form/SignUp";
+import Login from "./components/form/Login";
 import { auth, db } from './config/Config'
 import { CartContextProvider } from './global/CartContext';
 import { Cart } from './components/Cart';

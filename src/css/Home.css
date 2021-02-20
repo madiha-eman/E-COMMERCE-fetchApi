@@ -150,6 +150,29 @@ h1 {
         border-bottom: 1px solid #e4e4e4;
    
 }
+@media(max-width: 768px) {
+    .navbox{
+        /* border-bottom: 1px solid #e4e4e4; */
+        padding:  7px 4px;
+    }
+    .navbox .leftside{
+        display: flex;
+        width: 150px;
+        height: 60px;
+    }
+    .home0{
+        margin-top: 26px;
+    }
+    .home {
+        font-size: 12px !important;
+        letter-spacing: 0.1rem;
+
+    }
+    .navbox .leftside img{
+        width: 50px;
+        height: 50px;
+    }
+}
 
 @media(max-width: 768px) {
     h1 {
@@ -226,14 +249,14 @@ h1 {
 .product-btn{
     display: flex;
     justify-content: center;
-}
-a{
     text-decoration: none!important;
     cursor: pointer;
     color: #292929;
     transition: 0.3s;
 }
+
 .product-price {
+    color: #007bff!important;
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
@@ -259,6 +282,7 @@ a{
       text-decoration: none;
 }
 .addcart-btn{
+    color: #007bff!important;
     display: inline-block;
     font-size: 14px;
     font-weight: 700;

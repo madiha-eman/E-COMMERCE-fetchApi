@@ -4,12 +4,13 @@ import { CartContext } from '../global/CartContext'
 import { Navbar } from './Navbar';
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import '../css/Home.css'
 
 export const Cashout = (props) => {
 
     const history = useHistory();
 
-    const { shoppingCart, totalPrice, totalQty, dispatch } = useContext(CartContext);
+    const { shoppingCart, totalprice, totalQty, dispatch } = useContext(CartContext);
 
     // defining state
     const [name, setName] = useState('');
@@ -44,7 +45,7 @@ export const Cashout = (props) => {
                     BuyerEmail: email,
                     BuyerCell: cell,
                     BuyerAddress: address,
-                    BuyerPayment: totalPrice,
+                    BuyerPayment: totalprice,
                     BuyerQuantity: totalQty
                 }).then(() => {
                     db.collection('Buyer-info ' + user.uid).onSnapshot(snapshot => {
@@ -71,7 +72,7 @@ export const Cashout = (props) => {
         <>
             <Navbar user={props.user} />
             {error && <span>{error}</span>}
-            <div className='container'>
+            <div className='container-2'>
                 <br />
                 <h2 className='h1'>Cashout Details</h2>
                 <br />
@@ -95,7 +96,7 @@ export const Cashout = (props) => {
                     <br />
                     <label htmlFor="Price To Pay">Price To Pay</label>
                     <input type="number" className='form-control' required
-                        value={totalPrice} disabled />
+                        value={totalprice} disabled />
                     <br />
                     <label htmlFor="Total No of Products">Total No of Products</label>
                     <input type="number" className='form-control' required

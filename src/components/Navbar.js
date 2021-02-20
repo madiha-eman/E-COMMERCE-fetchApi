@@ -6,7 +6,6 @@ import { Icon } from 'react-icons-kit'
 import { cart } from 'react-icons-kit/entypo/cart'
 import { useHistory } from 'react-router-dom'
 import { CartContext } from '../global/CartContext'
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 export const Navbar = ({ user }) => {
@@ -24,7 +23,7 @@ export const Navbar = ({ user }) => {
     window.addEventListener('scroll', function () {
         let header = document.querySelector('header');
         let windowPosition = window.scrollY > 0;
-        header.classList.toggle('scrolling-active', windowPosition);
+        header.className.toggle('scrolling-active', windowPosition);
     })
 
     return (

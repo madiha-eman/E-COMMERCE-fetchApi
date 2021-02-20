@@ -1,5 +1,5 @@
 import React, { useContext,useState, useEffect } from 'react'
-import { ProductsContext } from '../global/ProductContext'
+// import { ProductsContext } from '../global/ProductContext'
 import { CartContext } from '../global/CartContext'
 import { motion } from 'framer-motion'
 import { Icon } from 'react-icons-kit'
@@ -10,7 +10,7 @@ import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 
 const Products = () => {
-    const { products } = useContext(ProductsContext);
+    // const { products } = useContext(ProductsContext);
 
     // const data = useContext(CartContext)
     // console.log(data)
@@ -54,11 +54,11 @@ const Products = () => {
                         {product.title}
                     </div>
                     <div className='product-btn'>
-                    <a className='product-price'>
+                    <span href='#' className='product-price'>
                         $ {product.price}
-                     </a>
-                    <a className='addcart-btn'  onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}><Icon icon={cart} /></a>
-                    <a className='addcart-btn'><Icon icon={heart} /></a>
+                     </span>
+                    <span className='addcart-btn'  onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}><Icon icon={cart} /></span>
+                    <span className='addcart-btn'><Icon icon={heart} /></span>
                     </div>
                 </motion.div>
             ))}
