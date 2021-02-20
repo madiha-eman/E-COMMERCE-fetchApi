@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import logo from '../images/logo.png'
+import logo from '../images/shoplogo.png'
 import { Link } from 'react-router-dom'
 import { auth } from '../config/Config'
 import { Icon } from 'react-icons-kit'
@@ -21,18 +21,25 @@ export const Navbar = ({ user }) => {
             history.push('/login');
         })
     }
+    window.addEventListener('scroll', function () {
+        let header = document.querySelector('header');
+        let windowPosition = window.scrollY > 0;
+        header.classList.toggle('scrolling-active', windowPosition);
+    })
 
     return (
-        <AppBar position="fixed">
+        <header>
+        {/* <AppBar position="fixed" className='appbar'> */}
              <Toolbar  className='rightside'>
         <div className='navbox'>
                
             <div className='leftside'>
-                <img src={logo} alt="" />
+                <img src={logo} alt=""  />
+                <div className='home0'>
+                <Link to='/' className='navlink home'>E-Shop</Link>
             </div>
-            <div>
-                <Link to='/' className='navlink home'>Home</Link>
             </div>
+           
             {!user && <div className='rightside'>
                 <span><Link to="signup" className='navlink'>SIGN UP</Link></span>
                 <span><Link to="login" className='navlink'>LOGIN</Link></span>
@@ -48,7 +55,8 @@ export const Navbar = ({ user }) => {
           
         </div>
         </Toolbar>
-        </AppBar>
+        {/* </AppBar> */}
+        </header>
     )
 }
 

@@ -8,7 +8,7 @@ export class ProductsContextProvider extends React.Component {
     state = {
         products: []
     }
-    
+
     componentDidMount() {
 
         const prevProducts = this.state.products;
@@ -18,9 +18,9 @@ export class ProductsContextProvider extends React.Component {
                 if (change.type === 'added') {
                     prevProducts.push({
                         ProductID: change.doc.id,
-                        ProductName: change.doc.data().ProductName,
-                        ProductPrice: change.doc.data().ProductPrice,
-                        ProductImg: change.doc.data().ProductImg
+                        title: change.doc.data().title,
+                        price: change.doc.data().price,
+                        image: change.doc.data().image
                     })
                 }
                 this.setState({

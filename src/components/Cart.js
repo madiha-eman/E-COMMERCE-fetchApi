@@ -11,7 +11,7 @@ import { auth } from '../config/Config'
 
 
 export const Cart = ({user}) => {
-    const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
+    const { shoppingCart, dispatch, totalprice, totalQty } = useContext(CartContext);
 
     const history = useHistory();
 
@@ -41,12 +41,12 @@ export const Cart = ({user}) => {
                     <div className='cart-card' key={cart.ProductID}>
 
                         <div className='cart-img'>
-                            <img src={cart.ProductImg} alt="not found" />
+                            <img src={cart.image} alt="not found" />
                         </div>
 
-                        <div className='cart-name'>{cart.ProductName}</div>
+                        <div className='cart-name'>{cart.title}</div>
 
-                        <div className='cart-price-orignal'>Rs {cart.ProductPrice}.00</div>
+                        <div className='cart-price-orignal'>$ {cart.price}</div>
 
                         <div className='inc' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })}>
                             <Icon icon={ic_add} size={24} />
@@ -59,7 +59,7 @@ export const Cart = ({user}) => {
                         </div>
 
                         <div className='cart-price'>
-                            Rs {cart.TotalProductPrice}.00
+                            $ {cart.TotalProductPrice}
                         </div>
 
                         <button className='delete-btn' onClick={() => dispatch({ type: 'DELETE', id: cart.ProductID, cart })}>
@@ -74,7 +74,7 @@ export const Cart = ({user}) => {
                     </div>
                     <div className='cart-summary-price'>
                         <span>Total Price</span>
-                        <span>{totalPrice}</span>
+                        <span>{totalprice}$</span>
                     </div>
                     <div className='cart-summary-price'>
                         <span>Total Qty</span>

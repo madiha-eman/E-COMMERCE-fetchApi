@@ -1,13 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Lobster&display=swap');
 .wrapper{
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color .5s ease;
+    z-index: 1000;
+}
+/*Apply styles after scroll*/
+.scrolling-active{
+    background-color: rgb(80, 68, 241)!important;
+    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+}
+
+.scrolling-active {
+    height: 4.5rem;
+}
+.scrolling-active img{
+   background-color: #fff!important;
+}
+
+.scrolling-active .logout-btn{
+    background-color: #fff!important;
+    color: #007bff;
+}
+
+
+.scrolling-active .navbox .rightside .relative .no-of-products {
+    background-color: #fff!important;
+    color: #007bff;
+}
+
+.scrolling-active .navlink{
+    color: #fff!important;
+}
+
+.scrolling-active #nav-cta:hover{
+    background-color: #151515;
+}
+
+.scrolling-active .nav-link::after{
+    background-color: #313131;
+}
+
+/*Apply styles after scroll end*/
+
+.appbar{
+    background-color: white!important;
+    /* box-shadow: none!important; */
+    outline: none!important;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color .5s ease;
+    z-index: 1000;
+}
 .navbox{
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #e4e4e4;
+    /* border-bottom: 1px solid #e4e4e4; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,14 +76,15 @@
 }
 
 .navbox .leftside{
-    width: 80px;
-    height: 80px;
+    display: flex;
+    width: 200px;
+    height: 90px;
 }
 
 
 .navbox .leftside img{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .navbox .rightside{
@@ -45,7 +106,7 @@
 }
 
 .navbox .rightside .relative .no-of-products {
-    background: #f57224;
+    background: #007bff;
     color: #fff;
     font-size: 10px;
     font-weight: 600;
@@ -60,10 +121,17 @@
     justify-content: center;
     align-items: center;
 }
+.home0{
+    margin-top: 34px;
+    
+ 
+}
 .home{
+    font-family: 'Akaya Telivigala', cursive,'Satisfy','Pacifico','Lobster';
+    letter-spacing: 0.2rem;
     color: #000 !important;
     text-decoration: none !important;
-    font-size: 14px !important;
+    font-size: 18px !important;
     font-weight: 600!important;
     
 }
@@ -71,8 +139,16 @@
 
 /* product */
 h1 {
-    padding: 30px;
+    margin-top: 70px!important;
+    padding: 50px;
     border-bottom: 1px solid #e4e4e4;
+}
+.h1{
+  
+        margin-top: 70px!important;
+        padding: 40px;
+        border-bottom: 1px solid #e4e4e4;
+   
 }
 
 @media(max-width: 768px) {
@@ -114,7 +190,7 @@ h1 {
 
 .products-container .product-card .product-img {
     width: 100%;
-    height: 180px;
+    height: 140px;
     margin-bottom: 20px;
 }
 
@@ -229,7 +305,7 @@ a{
     cursor: pointer;
     outline: none;
     border: hidden;
-    background-color: #2eca8b;
+    background-color: #007bff;
     margin-left: 10px;
 }
 
@@ -298,7 +374,7 @@ a{
 .cart-container .cart-card .cart-price-orignal {
     width: 150px;
     margin-left: 20px;
-    color: #f57224;
+    color: #007bff;
 }
 
 @media(max-width: 768px) {
@@ -316,7 +392,7 @@ a{
     border: hidden;
     outline: none;
     cursor: pointer;
-    color: red;
+    color: #007bff;
 }
 
 .inc,
@@ -345,7 +421,7 @@ a{
 }
 
 .cart-summary .cart-summary-heading {
-    border-bottom: 1px solid #f57224;
+    border-bottom: 1px solid #007bff;
 }
 
 .cart-summary .cart-summary-price {
@@ -360,7 +436,9 @@ a{
     text-decoration: none;
     color: #000;
 } 
-
+.btn-md{
+    background:#007bff!important;
+}
 
 /* cashout */
 .success-msg {
@@ -391,8 +469,9 @@ input::-webkit-input-placeholder{
     width: 100%;
     margin: 0 auto;
 }
-.container-login{
+/* .container-login{
     width: 100%;  
+    text-align: center;
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -411,7 +490,7 @@ input::-webkit-input-placeholder{
     border-radius: 10px;
     overflow: hidden;
     /*padding: 77px 55px 33px 55px;*/
-    padding: 66px 55px 66px 55px;
+    /* padding: 66px 55px 66px 55px;
     box-shadow: 0 0 3px 3px #dddddd, 
     6px 6px 8px 4px rgba(136, 136, 136, 0.7), 
     -6px -6px 8px 4px rgba(244, 244, 244, 0.7);
@@ -436,7 +515,7 @@ input::-webkit-input-placeholder{
   /*------------------------------------------------------------------
 [ Input ]*/
 
-.form-control {
+/* .form-control {
     width: 100%!important;
     position: relative!important;
     border-bottom: 2px solid #adadad!important;
@@ -461,5 +540,5 @@ input::-webkit-input-placeholder{
     height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none;
-  }
+    pointer-events: none; */
+  /* }  */

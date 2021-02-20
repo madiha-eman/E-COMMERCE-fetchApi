@@ -73,7 +73,7 @@ export const Cashout = (props) => {
             {error && <span>{error}</span>}
             <div className='container'>
                 <br />
-                <h2>Cashout Details</h2>
+                <h2 className='h1'>Cashout Details</h2>
                 <br />
                 {successMsg && <div className='success-msg'>{successMsg} <Link to="/" className='home-link'>Return to HOME</Link></div>}
                 <form autoComplete="off" className='form-group' onSubmit={cashoutSubmit}>
